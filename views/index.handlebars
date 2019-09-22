@@ -1,0 +1,31 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bem-vindo ao Curso de Node.Js</h1>
+  <p class="lead">Node.js + Express + Mongodb.</p>
+  <hr class="my-4">
+  <p>Aqui você poderá ler sobre as novidades.</p>
+  {{#if user}}
+
+  {{else}}
+  <a class="btn btn-primary btn-lg" href="/usuarios/registro" role="button">Criar uma conta</a>
+
+  {{/if}}
+  <hr>
+
+  <h2>Postagens Recentes</h2>
+
+
+  {{#each postagens }}
+  <div class="card mt-4">
+    <div class="card-body">
+      <h3>{{titulo}}</h3>
+      <p>{{descricao}}</p>
+      <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia mais...</button> </a>
+      <hr>
+      <small>{{categoria.nome}}</small><br>
+      <small>Data da publicação: {{data}}</small></br>
+    </div>
+  </div>
+
+  {{else}}
+  <h5>Nenhuma postagem registrada :( </h5>
+  {{/each}}
